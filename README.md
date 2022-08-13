@@ -41,18 +41,13 @@
 
 `bundle exec rspec spec/views`
 
-## Authors
+## Author
 
 👤 **Candy Inga Cynthia**
 
 - GitHub: [@cynthiainga](https://github.com/cynthiainga)
 - Twitter: [@CynthiaInga_C](https://twitter.com/CynthiaInga_C)
 - LinkedIn: [Cynthia Inga](https://www.linkedin.com/in/cynthia-inga/)
-
-👤 **Emmanuel Jolugbo**
-
-- GitHub: [@Thermiee](https://github.com/Thermiee)
-- LinkedIn: [Emmanuel](https://www.linkedin.com/in/emmanuel-jolugbo/)
 
 ## 🤝 Contributing
 
