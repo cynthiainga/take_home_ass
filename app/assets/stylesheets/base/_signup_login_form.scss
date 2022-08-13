@@ -1,0 +1,61 @@
+@import './mixins';
+@import './variable';
+
+input {
+  border: 1px solid $dark-color;
+}
+
+.form-wrapper {
+  @include flex-center(column);
+
+  .area {
+    padding-left: 0 !important;
+  }
+
+  textarea,
+  input {
+    padding: 8px;
+    font-size: 1.2rem;
+    width: 450px;
+  }
+}
+
+.blog-container {
+  @include flex-center(column);
+
+  h2 {
+    font-weight: bold;
+  }
+
+  .new_user {
+    :nth-child(4) {
+      position: relative;
+      padding: 12px 0 12px 30px;
+
+      input[type="checkbox"] {
+        position: absolute !important;
+        left: 6px;
+        margin: 5px auto;
+        width: 15px;
+        height: 15px;
+        border: 2px solid $dark-color;
+      }
+
+      label {
+        margin-top: 3px;
+      }
+    }
+  }
+}
+
+.text-center {
+  padding-left: 180px !important;
+}
+
+.actions:hover input {
+  color: $blue-link-color;
+}
+
+.pad-6 {
+  padding: 8px !important;
+}

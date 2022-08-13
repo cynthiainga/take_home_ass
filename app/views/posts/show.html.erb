@@ -1,0 +1,29 @@
+<div class="posts-bloc">
+  <div class="user-bloc-posts">
+    <div class="user-bloc-post">
+      <h4><%= @post.title %></h4>
+      <span class="user-post-content-comments">Comments: <%= @post.comments_counter || 0 %>, Likes: <%= @post.likes_counter || 0 %></span>
+      <span class="user-post-content"><%= @post.text %></span>
+    </div>
+    
+    <% unless @post.comments_counter == 0 %>
+      <%= render partial: 'comment', locals: { post: @post, comments: @post.comments }%>
+    <% else %>
+      <div class="user-bloc-post-comments mt-2">
+        <span><%= 'No comment available from this post! Add a new one from buttons below.' %></span>
+      </div>
+    <% end %>
+  </div>
+
+  <div class="d-flex">
+    <% if current_user %>
+      <%= button_to "New Comment", new_user_post_comment_path(@post.author, @post), method: :get, class: "pagination clickable" %>
+    
+      <%= button_to "Like", user_post_likes_path(@post.author, @post), class: "pagination clickable mx-4 px-4" %>
+    <% end %>
+
+    <% if can? :destroy, @post %>
+      <%= button_to "Delete Post" ,[@post.author, @post], method: :delete, class: "pagination" %>
+    <% end %>
+  </div>
+</div>

@@ -1,0 +1,29 @@
+<div class="users-bloc" id="user_<%= @user.id %>">
+  <div class="user-bloc">
+    <div class="user-image">
+      <img src="<%= @user.photo %>" alt="user image">
+    </div>
+    <div class="user-data">
+      <h4 class="user-name"><%= @user.name %></h4>
+      <span class="user-posts">Number of posts: <%= @user.posts_counter || 0 %></span>
+    </div>
+  </div>
+  <div class="user-bio">
+    <h4>Bio</h4>
+    <span class="user-bio-content"><%= @user.bio %></span>
+  </div>
+  <div class="user-bloc-posts">
+    <% @user.recent_posts.each do |post| %>
+    <div class="user-bloc-post">
+      <%= link_to user_post_path(@user, post) do %>
+        <h4><%= post.title %></h4>
+      <% end %>
+      <span class="user-post-content"><%= post.text %></span>
+      <span class="user-post-content-comments">Comment: <%= post.comments_counter || 0 %>, Likes : <%= post.likes_counter || 0 %></span>
+    </div>
+    <% end %>
+  </div>
+  <button class="see-posts clickable">
+    <%= link_to 'See All Posts', user_posts_path(@user) %>
+  </button>
+</div>

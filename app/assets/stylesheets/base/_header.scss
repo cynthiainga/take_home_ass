@@ -1,0 +1,15 @@
+@import './mixins';
+
+.header {
+  @include flex-between(block);
+
+  .navbar {
+    @include flex-between(column);
+
+    .nav-list {
+      margin-left: 2rem;
+      font-size: 1.4rem;
+      font-weight: 500;
+    }
+  }
+}

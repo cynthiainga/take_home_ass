@@ -1,0 +1,21 @@
+<header class="header px-5 mt-3">
+  <div class="logo fs-2 fw-bolder"><%= link_to "Blog App", root_path, class: 'link' %></div>
+  <nav class="navbar">
+    <ul class="nav-list d-flex">
+      <% if user_signed_in? %>
+      <li class="nav-item px-2"><%= link_to "Home", root_path %></li>
+      <li class="nav-item px-3 signout-btn">
+        <%= button_to "Sign out", destroy_user_session_path, method: :delete,
+        class: 'clickable link' %>
+      </li>
+      <% else %>
+      <li class="nav-item px-3">
+        <%= link_to "Log in", new_user_session_path, class: 'link' %>
+      </li>
+      <li class="nav-item">
+        <%= link_to "Sign Up", new_user_registration_path, class: 'link' %>
+      </li>
+      <% end %>
+    </ul>
+  </nav>
+</header>

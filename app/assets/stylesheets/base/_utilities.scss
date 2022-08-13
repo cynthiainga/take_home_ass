@@ -1,0 +1,72 @@
+@import './variable';
+
+* {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  box-sizing: border-box;
+}
+
+body {
+  background-color: $white-color;
+  font-size: 1rem;
+}
+
+.link,
+a {
+  text-decoration: none !important;
+  color: $dark-color;
+}
+
+a:hover {
+  text-decoration: underline;
+  color: $blue-link-color;
+}
+
+h4 {
+  font-size: 1.5rem;
+}
+
+.clickable {
+  cursor: pointer;
+}
+
+.signup-width-fields {
+  width: 450px;
+}
+
+textarea,
+input {
+  padding: 8px;
+  font-size: 1.2rem;
+  width: 450px;
+}
+
+textarea {
+  height: 100px;
+}
+
+.text-center {
+  text-align: center !important;
+}
+
+.blue-link-color {
+  color: $blue-link-color;
+}
+
+label {
+  font-weight: bold;
+}
+
+.signout-btn button {
+  background: none;
+  border: none;
+}
+
+.signout-btn:hover button {
+  color: $blue-link-color;
+}
+
+.column {
+  flex-direction: column;
+}

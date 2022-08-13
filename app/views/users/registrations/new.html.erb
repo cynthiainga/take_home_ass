@@ -1,0 +1,41 @@
+<div class="form-wrapper mt-4">
+  <h2 class="fw-bold">Sign up</h2>
+
+  <%= form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>
+    <%= render "users/shared/error_messages", resource: resource %>
+  
+    <div class="field mb-2">
+      <%= f.label :name %><br />
+      <%= f.text_field :name, placeholder: 'Enter your full name' %>
+    </div>
+  
+    <div class="field mb-2">
+      <%= f.label :email %><br />
+      <%= f.email_field :email, autofocus: true, autocomplete: "email", placeholder: 'Enter your email' %>
+    </div>
+  
+    <div class="area mb-2">
+      <%= f.label :bio %><br />
+      <%= f.text_area :bio, placeholder: 'Enter a description about you' %>
+    </div>
+  
+    <div class="field mb-2">
+      <%= f.label :password %>
+      <% if @minimum_password_length %>
+      <em>(<%= @minimum_password_length %> characters minimum)</em>
+      <% end %><br />
+      <%= f.password_field :password, autocomplete: "new-password", placeholder: 'Enter your password', class: 'pad-6' %>
+    </div>
+  
+    <div class="field mb-2">
+      <%= f.label :password_confirmation %><br />
+      <%= f.password_field :password_confirmation, autocomplete: "new-password", placeholder: 'Enter the same password' %>
+    </div>
+  
+    <div class="actions">
+      <%= f.submit "Sign up", class: 'pagination text-center w-100' %>
+    </div>
+  <% end %>
+
+  <%= render "users/shared/links" %>
+</div>

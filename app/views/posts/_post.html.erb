@@ -1,0 +1,17 @@
+<div class="user-bloc-posts">
+  <div class="user-bloc-post">
+    <%= link_to user_post_path(user, post) do %>
+      <h4><%= post.title %></h4>
+    <% end %>
+    <span class="user-post-content"><%= post.text %></span>
+    <span class="comments-likes">Comments: <%= post.comments_counter || 0 %>, Likes: <%= post.likes_counter || 0 %></span>
+  </div>
+
+  <% unless post.comments_counter == 0 %>
+    <%= render partial: 'comment', locals: { post: post, comments: post.recent_comments } %>
+  <% else %>
+    <div class="user-bloc-post-comments mt-2 text-center">
+      <span><%= 'No comment available from this post! Click the Post title to add a new one' %></span>
+    </div>
+  <% end %>
+</div>

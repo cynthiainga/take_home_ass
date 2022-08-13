@@ -1,0 +1,9 @@
+<div class="user-bloc-post-comments">
+  <% comments.includes([:author]).each do |comment| %>
+    <span><%= comment.author.name %>: <%= comment.text %></span>
+
+    <% if can? :destroy, comment %>
+           <%= button_to "Delete Comment", user_post_comment_path(post.author, post, comment), method: :delete, class: 'pagination' %>
+        <% end %>
+  <% end %>
+</div>

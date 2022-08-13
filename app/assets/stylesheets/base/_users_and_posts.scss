@@ -1,0 +1,94 @@
+@import './mixins';
+@import './variable';
+
+.posts-bloc,
+.users-bloc {
+  @include flex-center(column);
+
+  .user-bloc {
+    display: flex;
+    margin: 10px 0;
+
+    .user-image {
+      border: 1px solid $dark-color;
+      width: 100px;
+      height: 100px;
+      margin-right: 10px;
+
+      img {
+        height: 100%;
+        width: 100%;
+      }
+    }
+
+    .user-data {
+      width: 340px;
+      display: flex;
+      justify-content: space-between;
+      flex-direction: column;
+      border: 1px solid $dark-color;
+      padding: 10px;
+
+      .user-posts {
+        align-self: flex-end;
+        font-weight: bold;
+      }
+    }
+  }
+
+  .user-bio {
+    border: 1px solid $dark-color;
+    width: 450px;
+    padding: 15px;
+
+    & h4 {
+      padding-bottom: 10px;
+    }
+
+    .user-bio-content {
+      font-size: 1.1rem;
+      margin-top: 10px;
+    }
+  }
+
+  .user-bloc-posts {
+    margin: 10px auto;
+
+    .user-bloc-post-comments,
+    .user-bloc-post {
+      width: 450px;
+      padding: 5px 15px;
+      margin: 3px 0;
+      display: flex;
+      flex-direction: column;
+      border: 1px solid $dark-color;
+
+      .user-post-content {
+        padding: 10px 0;
+
+        &-comments {
+          font-weight: bold;
+          align-self: flex-end;
+        }
+      }
+    }
+  }
+}
+
+.comments-likes {
+  align-self: flex-end;
+  font-weight: bold;
+}
+
+.actions input[type="submit"],
+.see-posts,
+.pagination {
+  font-weight: 600;
+  font-size: 1.3rem;
+
+  @include buttons;
+}
+
+.see-posts:hover a {
+  text-decoration: none;
+}
